@@ -1,0 +1,62 @@
+.SidebarRight {
+  box-shadow: -0.155rem 0 0.77rem rgba(23, 49, 69, 0.15);
+  text-align: center;
+  img {
+    margin-top: 1.543rem;
+  }
+}
+
+.SidebarRight--files {
+  box-shadow: -0.155rem 0 0.77rem rgba(23, 49, 69, 0.15);
+  .SidebarRight__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.543rem 1.543rem 1.46rem;
+    border-bottom: 0.077rem solid #A5BBCB;
+  }
+  .SidebarRight__title {
+    font-size: 1.38rem;
+    line-height: 1.9rem;
+    color: #173145;
+  }
+  img.arrow {
+    transform: rotate(180deg);
+  }
+  .SidebarRight__search {
+    margin: 2.31rem;
+    margin-left: 1.543rem;
+    border-bottom: 0.077rem solid #A5BBCB;
+    padding-bottom: 0.46rem;
+    label {
+      margin-right: 0.46rem;
+    }
+    input {
+      border: none
+    }
+    input::placeholder {
+      font-size: 1.08rem;
+      line-height: 1.543rem;
+      color: #A5BBCB;
+    }
+  }
+  .files {
+    padding: 0 2.31rem 0 1.543rem;
+    .file {
+      padding-bottom: 0.925rem;
+      margin-bottom: 0.925rem;
+      border-bottom: 0.077rem solid #E5EFF6;
+      display: flex;
+      align-items: baseline;
+      cursor: pointer;
+    }
+    .file__icon {
+      margin-right: 0.46rem;
+    }
+    .file__title {
+      font-size: 1.08rem;
+      line-height: 1.543rem;
+      color: #30516A;
+    }
+  }
+}

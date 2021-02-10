@@ -1,0 +1,33 @@
+.Header {
+  padding: 0.925rem 1.85rem 0.925rem 2.31rem;
+  border-bottom: 0.077rem solid #E5EFF6;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    font-family: "Open Sans";
+    font-size: 1.85rem;
+    line-height: 2.55rem;
+    color: #173145;
+  }
+  &__img-wrapper {
+    display: inline-block;
+    position: relative;
+    margin-right: 1.543rem;
+  }
+  img {
+    cursor: pointer;
+  }
+  .red-circle {
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 0;
+    width: 0.77rem;
+    height: 0.77rem;
+    background: #F15151;
+    border-radius: 50%;
+  }
+}

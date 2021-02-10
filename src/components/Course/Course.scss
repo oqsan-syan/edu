@@ -1,0 +1,58 @@
+.Course {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 1.543rem #E8F0F6;
+    border-radius: 0.77rem;
+    padding: 1.543rem 2.77rem 1.543rem 1.543rem;
+    cursor: pointer;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img:first-child {
+      margin-right: 0.925rem;
+    }
+  } 
+  img {
+    cursor: pointer;
+  }
+}
+
+.lesson {
+  padding: 1.15rem 1.15rem 1.15rem 1.543rem;
+  margin-bottom: 0.925rem;
+  background: #FFFFFF;
+  box-shadow: 0 0 1.543rem #E8F0F6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__title {
+    padding-left: 1.543rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.23rem;
+    line-height: 1.85rem;
+    color: #173145;
+    span {
+      font-size: 1.08rem;
+      line-height: 1.543rem;
+      display: flex;
+      align-items: center;
+      color: #A5BBCB;
+      margin-right: 0.46rem;
+    }
+  }
+}
+
+.lesson:first-child {
+  margin-top: 0.925rem;
+}
+
+.lessons {
+  padding: 2.16rem 1.543rem 0.6rem;
+}
+
+.bg-dark {
+  circle {
+    fill: #30516A;
+  }
+}

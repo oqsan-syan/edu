@@ -1,0 +1,22 @@
+.edu-grid {
+  display: grid;
+  grid-template-columns: 4.17% 91.66% 4.17%;
+}
+
+.edu-grid--big {
+  display: grid;
+  grid-template-columns: 4.17% 75.97% 19.86%;
+}
+
+.sup-title {
+  font-size: 1.08rem;
+  line-height: 1.543rem;
+  color: #A5BBCB;
+  margin-bottom: 0.925rem;
+}
+
+.title {
+  font-size: 1.85rem;
+  line-height: 2.55rem;
+  color: #173145;
+}
