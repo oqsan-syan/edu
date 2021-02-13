@@ -1,4 +1,4 @@
-import { SET_FILES_STATE, SET_PATH_TITLE, SET_FILES_ARR } from "./actionTypes";
+import { SET_FILES_STATE, SET_PATH_TITLE, SET_FILES_ARR, SET_CURRENT_COURSE } from "./actionTypes";
 
 export function setFilesState(filesState) {
   return {
@@ -18,5 +18,12 @@ export function setFilesArr(filesArr) {
   return {
     type: SET_FILES_ARR,
     payload: filesArr
+  }
+};
+
+export function setCurrentCourse(currentCourse) {
+  return {
+    type: SET_CURRENT_COURSE,
+    payload: currentCourse
   }
 };

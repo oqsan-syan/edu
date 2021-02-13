@@ -9,14 +9,8 @@ const SidebarRight = () => {
 
   const filesState = useSelector((state) => state.files.filesState);
   const pathTitle = useSelector((state) => state.files.pathTitle);
-  // const courses = useSelector((state) => state.files.courses);
   const filesArr = useSelector((state) => state.files.filesArr);
-  // let filesArr = [];
-
-  // courses.forEach (course => {
-  //   filesArr.push(...[...course.files])
-  // })
-
+  
   return (
     <>
       {filesState ? (

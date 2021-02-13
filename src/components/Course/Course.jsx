@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import openIcon from './images/Open.svg';
 import closeIcon from './images/Close.svg';
-import materialsIcon from './images/Learning Material.svg';
 import './Course.scss';
 import Lessons from './Lessons';
+import { useSelector, useDispatch } from "react-redux";
+import {setFilesArr, setFilesState, setPathTitle, setCurrentCourse} from '../../redux/actions/filesActions';
 
-const Course = ({title, lessons}) => {
+const Course = ({title, lessons, course}) => {
   const [lessonsState, setlessonsState] = useState(false);
   
   let lessonsArr = [];
@@ -20,8 +21,50 @@ const Course = ({title, lessons}) => {
     imgSrc=closeIcon;
   }
 
+  const dispatch = useDispatch();
+
+  const courses = useSelector((state) => state.files.courses);
+  const filesArr = useSelector((state) => state.files.filesArr);
+  const pathTitle = useSelector((state) => state.files.pathTitle);
+  const currentCourse = useSelector((state) => state.files.currentCourse);
+  const filesState = useSelector((state) => state.files.filesState);
+
+  let arr = filesArr;
+
+  useEffect(() => {
+    dispatch(setFilesArr(arr));
+  });
+
+  const onMouseOverHandler = () => {
+    dispatch(setCurrentCourse(course));
+  }
+
+  const onIconClick = () => {
+    currentCourse.fileState = !currentCourse.fileState;
+    dispatch(setPathTitle(title));
+    if(currentCourse.fileState === false && filesState === false) {
+      dispatch(setFilesState(true))
+    } else if (currentCourse.fileState) {
+      dispatch(setFilesState(true));
+    } else if (currentCourse.fileState === false) {
+      dispatch(setFilesState(false));
+    }
+  }
+
+  courses.forEach(course => {
+    if(course.fileState) {
+      arr = course.files; 
+    }
+  });
+
+  courses.forEach(course => {
+      if(course.title !== pathTitle) {
+        course.fileState = false;
+      }
+  });
+
   return (
-    <div className="Course">
+    <div className="Course" onMouseOver={() => onMouseOverHandler()}>
       <div className="Course__inner">
         <div>
           <h5 className="Course__sup-title sup-title">Course</h5>
@@ -29,7 +72,10 @@ const Course = ({title, lessons}) => {
         </div>
         <div className="Course__icons">
           <img src={imgSrc} alt="" onClick={() => onClickHandler()} />
-          <img src={materialsIcon} alt="" />
+          <svg className={course.fileState ? 'bg-dark' : ''} onClick={() => onIconClick()} width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="16" fill="#E5EFF6"/>
+          <path d="M7 17H25V15H7V17ZM7 21H25V19H7V21ZM7 11V13H25V11H7Z" fill="#A5BBCB"/>
+          </svg>
         </div>
       </div>
       {lessonsState ? (

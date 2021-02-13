@@ -5,22 +5,27 @@ import './Path.scss';
 
 const Path = () => {
   const dispatch = useDispatch();
-const title = "C# Programming"
+  const title = "C# Programming"
   const files = [];
   let classes = ['material'];
 
   const filesState = useSelector(state => state.files.filesState);
   const courses = useSelector(state => state.files.courses);
   const pathTitle = useSelector(state => state.files.pathTitle);
+  const currentCourse = useSelector((state) => state.files.currentCourse);
   
   const onClickHandler = () => {
     dispatch(setFilesState(!filesState));
     dispatch(setPathTitle(title))
   }
-  
+
   if(filesState) {
     classes.pop('material');
     classes.push('material--hover');
+  }
+
+  if(currentCourse.fileState) {
+    classes.pop('material--hover');
   }
 
   if(title === pathTitle) {
