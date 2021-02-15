@@ -4,7 +4,7 @@ import closeIcon from './images/Close.svg';
 import './Course.scss';
 import Lessons from './Lessons';
 import { useSelector, useDispatch } from "react-redux";
-import {setFilesArr, setFilesState, setPathTitle, setCurrentCourse} from '../../redux/actions/filesActions';
+import {setFilesArr, setFilesState, setPathTitle} from '../../redux/actions/filesActions';
 
 const Course = ({title, lessons, course}) => {
   const [lessonsState, setlessonsState] = useState(false);
@@ -26,7 +26,6 @@ const Course = ({title, lessons, course}) => {
   const courses = useSelector((state) => state.files.courses);
   const filesArr = useSelector((state) => state.files.filesArr);
   const pathTitle = useSelector((state) => state.files.pathTitle);
-  const currentCourse = useSelector((state) => state.files.currentCourse);
   const filesState = useSelector((state) => state.files.filesState);
 
   let arr = filesArr;
@@ -35,18 +34,14 @@ const Course = ({title, lessons, course}) => {
     dispatch(setFilesArr(arr));
   });
 
-  const onMouseOverHandler = () => {
-    dispatch(setCurrentCourse(course));
-  }
-
   const onIconClick = () => {
-    currentCourse.fileState = !currentCourse.fileState;
+    course.fileState = !course.fileState;
     dispatch(setPathTitle(title));
-    if(currentCourse.fileState === false && filesState === false) {
+    if(course.fileState === false && filesState === false) {
       dispatch(setFilesState(true))
-    } else if (currentCourse.fileState) {
+    } else if (course.fileState) {
       dispatch(setFilesState(true));
-    } else if (currentCourse.fileState === false) {
+    } else if (course.fileState === false) {
       dispatch(setFilesState(false));
     }
   }
@@ -64,7 +59,7 @@ const Course = ({title, lessons, course}) => {
   });
 
   return (
-    <div className="Course" onMouseOver={() => onMouseOverHandler()}>
+    <div className="Course">
       <div className="Course__inner">
         <div>
           <h5 className="Course__sup-title sup-title">Course</h5>

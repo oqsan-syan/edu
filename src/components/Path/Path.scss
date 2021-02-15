@@ -7,12 +7,9 @@
     border-bottom: 0.077rem solid #E5EFF6;
     padding-bottom: 0.6rem;
   }
-  // &__icon:hover  {
-  //   cursor: pointer;
-  //   svg circle{
-  //     fill: #30516A;
-  //   }
-  // }
+  &__icon:hover  {
+    cursor: pointer;
+  }
   svg.material--hover circle {
     fill: #30516A;
   }

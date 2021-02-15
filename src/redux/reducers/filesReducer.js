@@ -1,4 +1,4 @@
-import { SET_FILES_STATE, SET_PATH_TITLE, SET_FILES_ARR, SET_CURRENT_COURSE } from "../actions/actionTypes";
+import { SET_FILES_STATE, SET_PATH_TITLE, SET_FILES_ARR } from "../actions/actionTypes";
 
 const initialState = {
   filesState: false,
@@ -32,11 +32,11 @@ const filesReducer = (state = initialState, action) => {
         ...state,
         filesArr: action.payload,
     };
-    case SET_CURRENT_COURSE:
-      return {
-        ...state,
-        currentCourse: action.payload,
-    };
+    // case SET_CURRENT_COURSE:
+    //   return {
+    //     ...state,
+    //     currentCourse: action.payload,
+    // };
     default:
       return state;
   }

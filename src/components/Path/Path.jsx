@@ -12,7 +12,6 @@ const Path = () => {
   const filesState = useSelector(state => state.files.filesState);
   const courses = useSelector(state => state.files.courses);
   const pathTitle = useSelector(state => state.files.pathTitle);
-  const currentCourse = useSelector((state) => state.files.currentCourse);
   
   const onClickHandler = () => {
     dispatch(setFilesState(!filesState));
@@ -24,9 +23,11 @@ const Path = () => {
     classes.push('material--hover');
   }
 
-  if(currentCourse.fileState) {
-    classes.pop('material--hover');
-  }
+  courses.forEach(course => {
+    if(course.fileState === true) {
+      classes.pop('material--hover');
+    }
+  })
 
   if(title === pathTitle) {
     courses.forEach ((course) => {
