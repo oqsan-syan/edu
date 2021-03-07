@@ -1,21 +1,27 @@
-import React from 'react';
+import React  from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { setFilesState, setPathTitle, setFilesArr } from '../../redux/actions/filesActions';
 import './Path.scss';
 
 const Path = () => {
   const dispatch = useDispatch();
-  const title = "C# Programming"
-  const files = [];
+  const title = "C# Programming";
   let classes = ['material'];
 
   const filesState = useSelector(state => state.files.filesState);
   const courses = useSelector(state => state.files.courses);
   const pathTitle = useSelector(state => state.files.pathTitle);
   
+  const files = [];
+
+  courses.forEach ((course) => {
+    files.push(...[...course.files])
+  }); 
+
   const onClickHandler = () => {
     dispatch(setFilesState(!filesState));
-    dispatch(setPathTitle(title))
+    dispatch(setPathTitle(title)); 
+    dispatch(setFilesArr(files));
   }
 
   if(filesState) {
@@ -27,14 +33,12 @@ const Path = () => {
     if(course.fileState === true) {
       classes.pop('material--hover');
     }
+    course.lessons.forEach(lesson => {
+      if(lesson.lessonState === true) {
+        classes.pop('material--hover');
+      }
+    })
   })
-
-  if(title === pathTitle) {
-    courses.forEach ((course) => {
-      files.push(...[...course.files])
-    });  
-    dispatch(setFilesArr(files));
-  }
   
   return (           
     <div className="Path">

@@ -60,3 +60,19 @@
     }
   }
 }
+
+@media(max-width: 1000px) {
+  .SidebarRight, .SidebarRight--files img.arrow {
+    .arrow {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media(max-width: 870px) {
+  .SidebarRight--files .files .file__title {
+    font-size: 1.14rem;
+    line-height: 1.6rem;
+  }
+}

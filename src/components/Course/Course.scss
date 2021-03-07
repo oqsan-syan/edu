@@ -56,3 +56,12 @@
     fill: #30516A;
   }
 }
+
+@media(max-width: 850px) {
+  .Course__icons {
+    svg, img {
+      width: 35%;
+      height: 35%;
+    }
+  }
+}

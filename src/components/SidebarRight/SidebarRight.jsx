@@ -1,15 +1,29 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import "./SidebarRight.scss"; 
 import arrowLeft from './images/arrow_back.svg';
 import search from './images/search.svg';
 import SidebarRightFiles from './SidebarRightFiles';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setFilesArr } from '../../redux/actions/filesActions';
 
 const SidebarRight = () => {
+  const dispatch = useDispatch();
 
   const filesState = useSelector((state) => state.files.filesState);
   const pathTitle = useSelector((state) => state.files.pathTitle);
   const filesArr = useSelector((state) => state.files.filesArr);
+  const courses = useSelector(state => state.files.courses);
+
+  const files = [];
+
+  courses.forEach ((course) => {
+    files.push(...[...course.files])
+  });  
+
+  useEffect(() => { 
+    dispatch(setFilesArr(files));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   
   return (
     <>
@@ -33,7 +47,7 @@ const SidebarRight = () => {
       </div>
     ): (
       <div className="SidebarRight">
-        <img src={arrowLeft} alt="arrow"/>
+        <img className="arrow" src={arrowLeft} alt="arrow"/>
       </div>
     )}
     </>

@@ -31,3 +31,23 @@
     border-radius: 50%;
   }
 }
+
+@media(max-width: 870px) {
+  .user-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media(max-width: 700px) {
+ .Header__img-wrapper {
+   img {
+     width: 22px;
+     height: 22px;
+   }
+ }
+ .user-icon {
+    width: 30px;
+    height: 30px;
+  }
+}

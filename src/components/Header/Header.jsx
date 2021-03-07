@@ -20,7 +20,7 @@ const Header = () => {
             <img src={notifications} alt=""/>
             <div className="red-circle"></div>
           </div>
-          <img src={user} alt=""/>
+          <img src={user} alt="" className='user-icon'/>
         </div>
       </div>
     </div>

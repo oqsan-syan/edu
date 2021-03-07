@@ -76,7 +76,7 @@ const Course = ({title, lessons, course}) => {
       {lessonsState ? (
         <div className='lessons'>
         {lessonsArr.map((lesson, index) => {
-          return <Lessons title={lesson.title} key={lesson.num} num={lesson.num} id={index}/>
+          return <Lessons lesson={lesson} title={lesson.title} key={lesson.num} num={lesson.num} id={index}/>
         })}
       </div>
       ):<div></div>}

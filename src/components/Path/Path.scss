@@ -14,3 +14,12 @@
     fill: #30516A;
   }
 }
+
+@media(max-width: 850px) {
+  .Path__icon {
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
