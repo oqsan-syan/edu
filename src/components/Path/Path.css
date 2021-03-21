@@ -1,0 +1,26 @@
+.Path {
+  padding: 1.543rem 2.77rem 0.77rem 1.543rem;
+}
+
+.Path__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.077rem solid #E5EFF6;
+  padding-bottom: 0.6rem;
+}
+
+.Path__icon:hover  {
+  cursor: pointer;
+}
+
+.Path svg.material--hover circle {
+  fill: #30516A;
+}
+
+@media(max-width: 850px) {
+  .Path__icon svg {
+    width: 25px;
+    height: 25px;
+  }
+}

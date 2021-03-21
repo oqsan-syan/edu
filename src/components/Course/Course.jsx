@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import openIcon from './images/Open.svg';
 import closeIcon from './images/Close.svg';
-import './Course.scss';
+import './Course.css';
 import Lessons from './Lessons';
 import { useSelector, useDispatch } from "react-redux";
 import {setFilesArr, setFilesState, setPathTitle} from '../../redux/actions/filesActions';
@@ -73,13 +73,13 @@ const Course = ({title, lessons, course}) => {
           </svg>
         </div>
       </div>
-      {lessonsState ? (
+      {lessonsState && (
         <div className='lessons'>
         {lessonsArr.map((lesson, index) => {
           return <Lessons lesson={lesson} title={lesson.title} key={lesson.num} num={lesson.num} id={index}/>
         })}
       </div>
-      ):<div></div>}
+      )}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import "./SidebarRight.scss"; 
+import "./SidebarRight.css"; 
 import arrowLeft from './images/arrow_back.svg';
 import search from './images/search.svg';
 import SidebarRightFiles from './SidebarRightFiles';

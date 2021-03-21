@@ -2,7 +2,7 @@ import React from 'react';
 import messages from './images/Messages.svg';
 import notifications from './images/Notifications.svg';
 import user from './images/User.svg';
-import './Header.scss'
+import './Header.css'
 
 const Header = () => {
   return (

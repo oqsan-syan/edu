@@ -1,5 +1,5 @@
 import React from 'react';
-import './SidebarRight.scss';
+import './SidebarRight.css';
 import fileIcon from './images/file.svg';
 
 const SidebarRightFiles = ({file}) => {

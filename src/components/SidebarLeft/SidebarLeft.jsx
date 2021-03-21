@@ -1,5 +1,5 @@
 import React from 'react';
-import "./SidebarLeft.scss";
+import "./SidebarLeft.css";
 import logo from './images/Logo_AlanTuring.png';
 import eduIcon from './images/Education.svg';
 import calendarIcon from './images/Calendar.svg';
